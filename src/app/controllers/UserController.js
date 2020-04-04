@@ -1,6 +1,7 @@
 import User from '../models/User';
 
 class UserControler {
+  // metodo para cadastrar usuários
   async store(req, res) {
     const userExists = await User.findOne({ where: { email: req.body.email } });
 
@@ -16,6 +17,11 @@ class UserControler {
       email,
       provider,
     });
+  }
+
+  // metodo para atualizar usuário
+  async update(req, res) {
+    return res.json({ ok: true });
   }
 }
 
