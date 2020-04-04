@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+
 /*
 função promisify pega função callback e
 transforma em uma função que pode ser utilizada
@@ -16,16 +17,12 @@ export default async (req, res, next) => {
     return res.status(401).json({ error: 'Token not provided' });
   }
 
-  /*
-  criar array para separar Bearer e Token
-  a virgula descarta conteúdo da primeira posição
-  que é o bearer
-  */
   const [, token] = authHeader.split(' ');
 
   try {
-    //
     const decoded = await promisify(jwt.verify)(token, authConfig.secret);
+
+    req.userId = decoded.id;
 
     console.log(decoded);
 
