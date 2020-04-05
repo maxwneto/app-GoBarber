@@ -2,10 +2,10 @@
 Para rodar a aplicação, você irá precisar Git, Node.js, Yarn, Docker e Postbird instalados no seu computador.
 No terminal rode:
 
-\#Clone este repositório
+\# Clone este repositório<br>
 $ git clone https://github.com/maxwneto/app-GoBarber.git
 
-Entre na pasta criada
+\# Entre na pasta criada<br>
 $ cd app-GoBarber
 
 Instale as dependências
