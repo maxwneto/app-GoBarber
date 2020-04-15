@@ -26,6 +26,10 @@ class User extends Model {
     return this;
   }
 
+  static associate(models) {
+    this.belongsTo(models.File, { foreignKey: 'avatar_id' });
+  }
+
   /*
   metodo para verificar se a senha do usuário está correta
   se a senha for igual ele retorna true
