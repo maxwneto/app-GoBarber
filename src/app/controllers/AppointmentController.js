@@ -59,6 +59,14 @@ class AppointmentCrontroller {
         .status(401)
         .json({ error: 'You can only create appointments with providers' });
     }
+
+    /**
+     * check user for not attend him self
+     */
+    if (provider_id === req.userId) {
+      return res.status(401).json('User can not attend himself');
+    }
+
     /**
      * check for past dates
      */
